@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: workflow-frontend
   labels:
-    app: nginx
+    app: workflow-frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: workflow-frontend
   template:
     metadata:
       labels:
-        app: nginx
+        app: workflow-frontend
     spec:
       containers:
-        - name: nginx
-          image: nginx:1.25
+        - name: workflow-frontend
+          image: reijiokito/workflow-frontend:latest
           ports:
             - containerPort: 80
